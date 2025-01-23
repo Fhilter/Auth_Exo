@@ -16,15 +16,15 @@ export const createUser = async (req, res) => {
   }
 
   try {
+    
     const hashedPassword = await bcrypt.hash(password, saltRounds);
-
     const newUser = {
       email,
       password: hashedPassword,
       avatarURL: avatarURL || null,
     };
 
-    const savedUser = await UserRepository.createUser(newUser);
+//const savedUser = await UserRepository.createUser(newUser);
 
     res.status(201).json({ message: "User created successfully" });
   } catch (err) {
