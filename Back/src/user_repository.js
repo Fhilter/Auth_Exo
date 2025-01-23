@@ -1,7 +1,6 @@
-import { UserModel } from "./models/userSchema.js"
+import { UserModel } from "./models/user_Schema.js";
 
 export const UserRepository = {
-
   createUser: async (data) => {
     const newUser = new UserModel(data);
     const savedUser = await newUser.save();
@@ -15,5 +14,4 @@ export const UserRepository = {
       return null;
     }
   },
-
 };
